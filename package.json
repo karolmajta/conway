@@ -1,0 +1,30 @@
+{
+  "name": "conway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-html": "mkdir -p dist && cp src/html/index.html dist/index.html",
+    "build-js": "mkdir -p dist/js && ./node_modules/.bin/browserify src/js/index.js -o dist/js/index.js -t [ babelify ]",
+    "build-all": "npm run build-html && npm run build-js",
+    "clean-html": "rm -rf dist/index.html",
+    "clean-js": "rm -rf dist/js",
+    "clean-all": "npm run clea-html && npm run clean-js",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "chai": "^3.5.0",
+    "immstruct": "^2.0.0",
+    "immutable": "^3.8.1",
+    "mocha": "^2.5.3",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  }
+}
